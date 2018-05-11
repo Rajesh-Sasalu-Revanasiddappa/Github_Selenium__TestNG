@@ -18,12 +18,20 @@ public class git_Selenium_TestNG {
 	
 	public String URL = "http://toolsqa.com";
 	
+	public String pageTitle;
+	
 	@Test
-	public void page_load(){
+	public void page_load() throws Exception{
 		
 		d1 = new FirefoxDriver();
 		
 		d1.navigate().to(URL);
+		
+		Thread.sleep(3000);
+		
+		pageTitle = d1.getTitle();
+		
+		System.out.println("The page title is : "+pageTitle);
 	}
 	
 	@AfterClass
